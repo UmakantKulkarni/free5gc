@@ -6,9 +6,9 @@ configuration:
   smfName: SMF # the name of this SMF
   sbi: # Service-based interface information
     scheme: http # the protocol for sbi (http or https)
-    registerIPv4: 127.0.0.2 # IP used to register to NRF
-    bindingIPv4: 127.0.0.2  # IP used to bind the service
-    port: 8000 # Port used to bind the service
+    registerIPv4: free5gc-smf-svc # IP used to register to NRF
+    bindingIPv4: free5gc-smf-svc  # IP used to bind the service
+    port: 29502 # Port used to bind the service
     tls: # the local path of TLS key
       key: free5gc/support/TLS/smf.key # SMF TLS Certificate
       pem: free5gc/support/TLS/smf.pem # SMF TLS Private key
@@ -32,14 +32,14 @@ configuration:
           dns: # the IP address of DNS
             ipv4: 8.8.8.8
   pfcp: # the IP address of N4 interface on this SMF (PFCP)
-    addr: 127.0.0.1
+    addr: free5gc-smf-svc
   userplane_information: # list of userplane information
     up_nodes: # information of userplane node (AN or UPF)
       gNB1: # the name of the node
         type: AN # the type of the node (AN or UPF)
       UPF:  # the name of the node
         type: UPF # the type of the node (AN or UPF)
-        node_id: 127.0.0.8 # the IP/FQDN of N4 interface on this UPF (PFCP)
+        node_id: free5gc-upf-svc # the IP/FQDN of N4 interface on this UPF (PFCP)
         sNssaiUpfInfos: # S-NSSAI information list for this UPF
           - sNssai: # S-NSSAI (Single Network Slice Selection Assistance Information)
               sst: 1 # Slice/Service Type (uinteger, range: 0~255)
@@ -58,12 +58,12 @@ configuration:
         interfaces: # Interface list for this UPF
           - interfaceType: N3 # the type of the interface (N3 or N9)
             endpoints: # the IP address of this N3/N9 interface on this UPF
-              - 127.0.0.8
+              - free5gc-upf-svc
             networkInstance: internet # Data Network Name (DNN)
     links: # the topology graph of userplane, A and B represent the two nodes of each link
       - A: gNB1
         B: UPF
-  nrfUri: http://127.0.0.10:8000 # a valid URI of NRF
+  nrfUri: http://free5gc-nrf-svc:29510 # a valid URI of NRF
 
 # the kind of log output
   # debugLevel: how detailed to output, value: trace, debug, info, warn, error, fatal, panic
