@@ -1,6 +1,6 @@
 [submodule "amf"]
 	path = NFs/amf
-	url = https://github.com/free5gc/amf.git
+	url = https://github.com/UmakantKulkarni/amf.git
 [submodule "ausf"]
 	path = NFs/ausf
 	url = https://github.com/free5gc/ausf.git
@@ -27,7 +27,7 @@
 	url = https://github.com/free5gc/udr.git
 [submodule "upf"]
 	path = NFs/upf
-	url = https://github.com/UmakantKulkarni/upf
+	url = https://github.com/UmakantKulkarni/upf.git
 [submodule "webconsole"]
 	path = webconsole
 	url = https://github.com/free5gc/webconsole.git
